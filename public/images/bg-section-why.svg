@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 980" fill="none" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="w1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#151a16"/>
+      <stop offset="40%" stop-color="#252d27"/>
+      <stop offset="100%" stop-color="#1e2620"/>
+    </linearGradient>
+    <radialGradient id="w2" cx="70%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#6dbe45" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#1e2620" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="w3" cx="15%" cy="75%" r="45%">
+      <stop offset="0%" stop-color="#3d5a30" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1e2620" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="980" fill="url(#w1)"/>
+  <rect width="1920" height="980" fill="url(#w2)"/>
+  <rect width="1920" height="980" fill="url(#w3)"/>
+  <circle cx="1560" cy="700" r="380" stroke="#6dbe45" stroke-opacity="0.06" stroke-width="2" fill="none"/>
+  <circle cx="1560" cy="700" r="280" stroke="#fff" stroke-opacity="0.04" stroke-width="1" fill="none"/>
+  <path opacity="0.08" fill="#fff" d="M0 650 Q480 520 960 600 T1920 520 L1920 980 L0 980 Z"/>
+</svg>

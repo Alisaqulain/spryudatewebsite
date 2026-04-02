@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 109 190 69;
+    --secondary: 47 47 47;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-secondary antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-secondary;
+  }
+}
+
+@keyframes hero-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-hero-shimmer {
+  background-size: 200% auto;
+  animation: hero-shimmer 5s linear infinite;
+}
+
+.animate-hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-hero-slide-progress {
+  transform-origin: left;
+  animation: hero-slide-progress var(--hero-slide-ms, 2s) linear forwards;
+}
+
+.hero-slide-progress-paused {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-shimmer,
+  .animate-hero-float {
+    animation: none;
+  }
+
+  .animate-hero-slide-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+
+.retail-swiper .swiper-pagination-bullet {
+  background: #2f2f2f;
+  opacity: 0.25;
+}
+.retail-swiper .swiper-pagination-bullet-active {
+  background: #6dbe45;
+  opacity: 1;
+}
