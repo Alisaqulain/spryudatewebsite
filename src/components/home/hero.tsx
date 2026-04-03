@@ -199,7 +199,7 @@ export function Hero() {
   const progressPaused = Boolean(reduce) || thumbHover;
 
   return (
-    <section className="relative isolate flex min-h-[100svh] max-h-[100svh] flex-col overflow-hidden bg-[#0a0c0a] sm:max-h-none sm:min-h-[min(100svh,880px)]">
+    <section className="relative isolate flex min-h-[100svh] max-h-[100svh] flex-col overflow-hidden bg-mesh-hero sm:max-h-none sm:min-h-[min(100svh,880px)]">
       {/* 3D background slider */}
       <div
         className="absolute inset-0"
@@ -243,28 +243,28 @@ export function Hero() {
               />
             </motion.div>
             <div
-              className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-secondary/40"
+              className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/20 to-transparent"
               aria-hidden
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Premium scrims */}
+      {/* Light scrims */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/[0.88] via-black/65 to-black/35 sm:from-black/[0.82] sm:via-black/55 sm:to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/85 via-white/70 to-white/40 sm:from-white/80 sm:via-white/65 sm:to-white/30"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_0%_50%,rgba(109,190,69,0.12),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_0%_50%,rgba(99,194,83,0.18),transparent_55%)]"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,transparent_40%,rgba(109,190,69,0.06)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,transparent_40%,rgba(99,194,83,0.08)_100%)]"
         aria-hidden
       />
       <svg
-        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.04]"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden
       >
@@ -289,8 +289,8 @@ export function Hero() {
       <div className="relative z-10 mx-auto flex min-h-0 w-full max-w-7xl flex-1 flex-col overflow-y-auto overscroll-contain px-3 pb-3 pt-3 sm:px-5 sm:pb-5 sm:pt-4 lg:px-8 lg:pb-6 lg:pt-5">
         <div className="flex min-h-0 w-full flex-col gap-3 sm:gap-4 lg:gap-5">
           {/* Compact top bar: counter + progress hint + chips */}
-          <div className="flex shrink-0 flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.06] px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-white/45 backdrop-blur-md sm:px-2.5 sm:text-[11px]">
+            <div className="flex shrink-0 flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-1.5 rounded-full border border-secondary/10 bg-white/70 px-2 py-1 text-[10px] font-medium uppercase tracking-wider text-secondary/60 shadow-sm backdrop-blur-md sm:px-2.5 sm:text-[11px]">
               <span className="font-mono tabular-nums text-primary">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -300,7 +300,7 @@ export function Hero() {
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="flex items-center gap-1 rounded-lg border border-white/12 bg-white/[0.05] px-2 py-1 backdrop-blur-md">
+              <span className="flex items-center gap-1 rounded-lg border border-secondary/10 bg-white px-2 py-1 shadow-sm backdrop-blur-md">
                 <Image
                   src="/globe.svg"
                   alt=""
@@ -313,7 +313,7 @@ export function Hero() {
                   Pan-India
                 </span>
               </span>
-              <span className="flex items-center rounded-lg border border-white/12 bg-white/[0.05] p-1 backdrop-blur-md">
+              <span className="flex items-center rounded-lg border border-secondary/10 bg-white p-1 shadow-sm backdrop-blur-md">
                 <Image
                   src="/file.svg"
                   alt=""
@@ -463,15 +463,20 @@ export function Hero() {
 
                     <motion.h1
                       variants={overlayLine}
-                      className="font-display mt-3 text-balance text-[1.35rem] font-extrabold leading-[1.12] tracking-[-0.03em] text-white [text-shadow:0_1px_24px_rgba(0,0,0,0.35)] xs:text-[1.5rem] sm:mt-4 sm:text-2xl sm:leading-[1.1] md:text-3xl lg:text-[1.875rem] lg:leading-[1.08] xl:text-4xl"
+                      className="font-display mt-3 text-balance text-[1.35rem] font-extrabold leading-[1.12] tracking-[-0.03em] text-secondary xs:text-[1.5rem] sm:mt-4 sm:text-2xl sm:leading-[1.1] md:text-3xl lg:text-[1.875rem] lg:leading-[1.08] xl:text-4xl"
                     >
                       {slide.titleBefore}{" "}
                       <span
                         className={cn(
-                          "bg-gradient-to-r from-emerald-200 via-primary to-lime-200 bg-clip-text text-transparent",
+                          // Darker grass gradient so the green words stay visible on light backgrounds
+                          "bg-gradient-to-r from-[#2f7a24] via-primary to-[#3ca63a] bg-clip-text text-transparent",
                           !reduce && "animate-hero-shimmer"
                         )}
-                        style={{ backgroundSize: "200% auto" }}
+                        style={{
+                          backgroundSize: "200% auto",
+                          // Subtle shadow only on the accent to lift it from the background
+                          textShadow: "0 1px 2px rgba(0,0,0,0.18)",
+                        }}
                       >
                         {slide.titleAccent}
                       </span>
@@ -479,7 +484,7 @@ export function Hero() {
 
                     <motion.p
                       variants={overlayLine}
-                      className="mt-2.5 max-w-none text-[13px] leading-relaxed text-white/85 sm:mt-3 sm:text-sm sm:leading-relaxed md:text-[15px]"
+                      className="mt-2.5 max-w-none text-[13px] leading-relaxed text-secondary/80 sm:mt-3 sm:text-sm sm:leading-relaxed md:text-[15px]"
                     >
                       {slide.description}
                     </motion.p>
@@ -494,7 +499,7 @@ export function Hero() {
                           variants={trustItem}
                           className="list-none"
                         >
-                          <span className="flex min-h-0 items-center gap-1.5 rounded-lg border border-white/15 bg-white/[0.06] px-2 py-1.5 text-[11px] font-semibold leading-tight text-white/92 backdrop-blur-sm sm:gap-2 sm:px-2.5 sm:py-2 sm:text-xs">
+                          <span className="flex min-h-0 items-center gap-1.5 rounded-lg border border-secondary/10 bg-white/80 px-2 py-1.5 text-[11px] font-semibold leading-tight text-secondary/90 shadow-sm backdrop-blur-sm sm:gap-2 sm:px-2.5 sm:py-2 sm:text-xs">
                             <CheckCircle2
                               className="h-3.5 w-3.5 shrink-0 text-primary sm:h-4 sm:w-4"
                               strokeWidth={2.5}
@@ -507,13 +512,13 @@ export function Hero() {
 
                     <motion.div
                       variants={overlayLine}
-                      className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-0.5 border-t border-white/10 pt-3 text-[11px] sm:mt-4 sm:pt-3.5 sm:text-xs"
+                      className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-0.5 border-t border-secondary/10 pt-3 text-[11px] text-secondary/65 sm:mt-4 sm:pt-3.5 sm:text-xs"
                     >
                       <span className="font-semibold text-primary">
                         {slide.floatTitle}
                       </span>
-                      <span className="text-white/30">·</span>
-                      <span className="text-white/50">{slide.floatSubtitle}</span>
+                      <span className="text-secondary/30">·</span>
+                      <span>{slide.floatSubtitle}</span>
                     </motion.div>
                   </motion.div>
                 </AnimatePresence>
@@ -530,7 +535,7 @@ export function Hero() {
               }}
               className="mt-3 flex shrink-0 flex-col gap-2 sm:mt-4 sm:gap-3"
             >
-              <p className="text-[11px] text-white/45 sm:text-xs">
+              <p className="text-[11px] text-secondary/55 sm:text-xs">
                 No obligation · Same-day reply typical
               </p>
               <div className="flex w-full max-w-md flex-col gap-2 min-[420px]:max-w-lg min-[420px]:flex-row min-[420px]:gap-3">

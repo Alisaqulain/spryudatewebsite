@@ -14,9 +14,10 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: "#6DBE45",
+          // Grassier, brighter green
+          DEFAULT: "#63C253",
           foreground: "#0f172a",
-          muted: "#5aa83a",
+          muted: "#4FB744",
         },
         secondary: {
           DEFAULT: "#2F2F2F",

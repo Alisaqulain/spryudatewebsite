@@ -13,23 +13,23 @@ export function CtaSection() {
   return (
     <MotionSection
       id="contact"
-      className="relative isolate min-h-0 overflow-hidden py-16 sm:py-20 lg:py-24"
+      className="relative isolate min-h-0 overflow-hidden bg-gradient-to-b from-white via-[#f4fbea] to-[#f0f9e6] py-16 sm:py-20 lg:py-24"
     >
       <Image
         src="/images/bg-section-cta.svg"
         alt=""
         fill
-        className="object-cover object-center"
+        className="object-cover object-center opacity-60 mix-blend-lighten"
         sizes="100vw"
         unoptimized
         priority={false}
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/80 via-secondary/88 to-black/85"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/70"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_120%,rgba(109,190,69,0.2),transparent_45%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_0%,rgba(99,194,83,0.16),transparent_55%)]"
         aria-hidden
       />
 
@@ -57,10 +57,10 @@ export function CtaSection() {
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
             Start a conversation
           </p>
-          <h2 className="font-display mt-4 text-balance text-[1.85rem] font-bold tracking-tight text-white xs:text-3xl sm:text-4xl lg:text-[2.85rem] lg:leading-[1.1]">
+          <h2 className="font-display mt-4 text-balance text-[1.85rem] font-bold tracking-tight text-secondary xs:text-3xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.1]">
             Get the right cover—without the runaround
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/75 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-secondary/70 sm:text-lg">
             Share your context. We will reply with a clear next step, timeline, and
             the documents we need so nothing stalls on our side.
           </p>
@@ -90,7 +90,7 @@ export function CtaSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="h-12 w-full min-w-[200px] rounded-xl border-2 border-white/25 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur-sm hover:border-primary/40 hover:bg-white/15 min-[480px]:w-auto"
+                  className="h-12 w-full min-w-[200px] rounded-xl border-2 border-secondary/10 bg-white/80 px-8 text-base font-semibold text-secondary shadow-sm backdrop-blur-sm hover:border-primary/40 hover:bg-white min-[480px]:w-auto"
                 >
                   <Link href="#corporate" className="gap-2">
                     Explore corporate
@@ -99,7 +99,7 @@ export function CtaSection() {
               </motion.div>
             </div>
 
-            <p className="flex flex-wrap items-center justify-center gap-2 text-xs text-white/45 sm:text-sm">
+            <p className="flex flex-wrap items-center justify-center gap-2 text-xs text-secondary/55 sm:text-sm">
               <Phone className="h-4 w-4 shrink-0 text-primary/90" aria-hidden />
               <span>Prefer a call? Mention it in your message—we will coordinate.</span>
             </p>
